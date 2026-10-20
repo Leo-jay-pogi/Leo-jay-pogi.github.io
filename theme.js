@@ -3,6 +3,10 @@ const themeStorageKey = "leo-portfolio-night-mode";
 const profileImage = document.querySelector(".profile-photo img");
 const profileGlitchImage = document.querySelector(".profile-glitch-image");
 const universeLabel = document.querySelector(".universe-label");
+const soundtrackFrame = document.querySelector(".soundtrack-player iframe");
+const soundtrackWidget = soundtrackFrame && window.SC
+    ? window.SC.Widget(soundtrackFrame)
+    : null;
 
 function setNightMode(enabled) {
     document.body.classList.toggle("night-mode", enabled);
@@ -54,6 +58,10 @@ themeToggleButtons.forEach((button) => {
     button.addEventListener("click", () => {
         nightModeEnabled = !document.body.classList.contains("night-mode");
         setNightMode(nightModeEnabled);
+
+        if (soundtrackWidget) {
+            soundtrackWidget.play();
+        }
 
         try {
             window.localStorage.setItem(themeStorageKey, String(nightModeEnabled));
