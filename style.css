@@ -601,6 +601,28 @@ header::after {
     border-color: var(--accent);
 }
 
+.soundtrack-section {
+    text-align: center;
+}
+
+.soundtrack-player {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin: 20px auto 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgb(var(--accent-rgb) / 0.15);
+}
+
+.soundtrack-player iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .profile-quote {
     margin-bottom: 22px;
     color: var(--accent);
